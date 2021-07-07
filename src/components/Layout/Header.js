@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './Header.module.css';
-import leSilpoImage from '../../assets/lesilpo_banner.jpg';
+import leSilpoImage from '../../assets/silpo_banner.jpg';
 
 const Header = props => {
     return <>
