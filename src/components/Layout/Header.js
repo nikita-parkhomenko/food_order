@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classes from './Header.module.css';
 import leSilpoImage from '../../assets/silpo_banner.jpg';
