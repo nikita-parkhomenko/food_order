@@ -7,14 +7,17 @@ import CartContext from '../../store/cart-store/cart-context';
 const HeaderCartButton = ({ handleShowCart }) => {
     const context = useContext(CartContext);
 
-    console.log('context', context);
+    const totalItems = context.items.reduce((current, item) => {
+        return current + item.amount;
+    }, 0);
+
     return <button className={classes.button} onClick={handleShowCart}>
         <span className={classes.icon}>
             <CartIcon />
         </span>
         <span>Your Cart</span>
         <span className={classes.badge}>
-            {context.totalAmount}
+            {totalItems}
         </span>
     </button>
 }
