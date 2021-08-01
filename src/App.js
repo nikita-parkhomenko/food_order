@@ -8,25 +8,16 @@ import CartProvider from './store/cart-store/cart-provider';
 const App = () => {
     const [showCart, setShowCart] = useState(false);
 
-    const handleShowCart = () => {
-        setShowCart(true);
-    }
+    const handleShowCart = () => setShowCart(true);
+    const handleHideCart = () => setShowCart(false);
 
-    const handleHideCart = () => {
-        setShowCart(false);
-    }
-
-    console.log('show cart', showCart);
-
-    return (
-        <CartProvider>
-            {showCart && <Cart handleHideCart={handleHideCart} />}
-            <Header handleShowCart={handleShowCart} />
-            <main>
-                <Meals />
-            </main>
-        </CartProvider>
-    );
+    return <CartProvider>
+        {showCart && <Cart handleHideCart={handleHideCart} />}
+        <Header handleShowCart={handleShowCart} />
+        <main>
+            <Meals />
+        </main>
+    </CartProvider>;
 };
 
 export default App;
