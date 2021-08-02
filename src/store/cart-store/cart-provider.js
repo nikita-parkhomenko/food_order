@@ -27,8 +27,8 @@ const CartProvider = props => {
     const removeItemFromCart = itemId => dispatch({ type: 'REMOVE_ITEM', itemId });
 
     const cartContext = {
-        items: [{ id: 1, name: 'sushi', amount: 3, price: 12.99 }],
-        totalPrice: 0,
+        items: state.items,
+        totalPrice: state.totalPrice,
         addItem: addItemToCart,
         removeItem: removeItemFromCart,
     }
